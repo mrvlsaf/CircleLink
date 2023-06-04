@@ -30,14 +30,14 @@ const ProfileModal = ({ user, children }) => {
           <ModalHeader
             fontSize="40px"
             fontFamily="Work sans"
-            d="flex"
+            display="flex"
             justifyContent="center"
           >
             {user.name}
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody
-            d="flex"
+            display="flex"
             flexDir="column"
             alignItems="center"
             justifyContent="space-between"
@@ -58,8 +58,8 @@ const ProfileModal = ({ user, children }) => {
           <ModalFooter>
             <Button onClick={onClose}>Close</Button>
           </ModalFooter>
-        </ModalContent>
-      </Modal>
+        </ModalContent >
+      </Modal >
     </>
   );
 };

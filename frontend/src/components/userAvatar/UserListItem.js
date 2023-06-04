@@ -15,7 +15,7 @@ const UserListItem = ({ handleFunction }) => {
         color: "white",
       }}
       w="100%"
-      d="flex"
+      display="flex"
       alignItems="center"
       color="black"
       px={3}
@@ -37,7 +37,7 @@ const UserListItem = ({ handleFunction }) => {
           {user.email}
         </Text>
       </Box>
-    </Box>
+    </Box >
   );
 };
 
