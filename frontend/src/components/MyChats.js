@@ -51,10 +51,10 @@ const MyChats = ({ fetchAgain }) => {
       flexDir="column"
       alignItems="center"
       p={3}
-      bg="white"
+      color="#838383"
       w={{ base: "100%", md: "31%" }}
-      borderRadius="lg"
-      borderWidth="1px"
+      h="100%"
+      bg="#20232b"
     >
       <Box
         pb={3}
@@ -81,9 +81,9 @@ const MyChats = ({ fetchAgain }) => {
         display="flex"
         flexDir="column"
         p={3}
-        bg="#F8F8F8"
+        bg="#20232b"
         w="100%"
-        h="100%"
+        h="90%"
         borderRadius="lg"
         overflowY="hidden"
       >

@@ -4,3 +4,16 @@
   overflow-y: scroll;
   scrollbar-width: none;
 }
+
+.search-button:hover {
+  border: 1px solid white;
+}
+
+.profile-list{
+  padding: 1em !important;
+}
+
+.profile-list:hover {
+  background-color: black;
+  transition: ease-in 0.3s;
+}

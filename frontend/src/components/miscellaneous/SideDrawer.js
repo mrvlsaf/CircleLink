@@ -31,6 +31,7 @@ import { Effect } from "react-notification-badge";
 import { getSender } from "../../config/ChatLogics";
 import UserListItem from "../userAvatar/UserListItem";
 import { ChatState } from "../../Context/ChatProvider";
+import '../styles.css';
 
 function SideDrawer() {
   const [search, setSearch] = useState("");
@@ -128,13 +129,14 @@ function SideDrawer() {
         display="flex"
         justifyContent="space-between"
         alignItems="center"
-        bg="white"
+        bg="#20232b"
         w="100%"
-        p="5px 10px 5px 10px"
-        borderWidth="5px"
+        p="10px 15px"
+        color="#eff0f0"
+        borderBottom="5px solid black"
       >
         <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
-          <Button variant="ghost" onClick={onOpen}>
+          <Button className="search-button" colorScheme="#eff0f0" onClick={onOpen}>
             <i className="fas fa-search"></i>
             <Text d={{ base: "none", md: "flex" }} px={4}>
               Search User
@@ -179,20 +181,19 @@ function SideDrawer() {
                 src={user.pic}
               />
             </MenuButton>
-            <MenuList>
+            <MenuList p={0} bg="#16171b" border="none">
               <ProfileModal user={user}>
-                <MenuItem>My Profile</MenuItem>{" "}
+                <MenuItem className="profile-list" bg="#16171b">My Profile</MenuItem>{" "}
               </ProfileModal>
-              <MenuDivider />
-              <MenuItem onClick={logoutHandler}>Logout</MenuItem>
+              <MenuItem className="profile-list" bg="#16171b" onClick={logoutHandler}>Logout</MenuItem>
             </MenuList>
           </Menu>
         </div>
-      </Box >
+      </Box>
 
       <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent bg="#20232b" color="#e8e8e8">
           <DrawerHeader borderBottomWidth="1px">Search Users</DrawerHeader>
           <DrawerBody>
             <Box display="flex" pb={2}>
@@ -201,6 +202,9 @@ function SideDrawer() {
                 mr={2}
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
+                borderWidth={1}
+                padding="0.5em 1em"
+                variant="unstyled"
               />
               <Button onClick={handleSearch}>Go</Button>
             </Box>
@@ -218,7 +222,7 @@ function SideDrawer() {
             {loadingChat && <Spinner ml="auto" display="flex" />}
           </DrawerBody>
         </DrawerContent>
-      </Drawer>
+      </Drawer >
     </>
   );
 }

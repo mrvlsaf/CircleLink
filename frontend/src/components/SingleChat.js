@@ -164,15 +164,17 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         <>
           <Text
             fontSize={{ base: "28px", md: "30px" }}
-            pb={3}
-            px={2}
+            p={3}
             w="100%"
+            h="13%"
             fontFamily="Work sans"
             display="flex"
+            color="#838383"
             justifyContent={{ base: "space-between" }}
             alignItems="center"
           >
             <IconButton
+              bg="#838383"
               d={{ base: "flex", md: "none" }}
               icon={<ArrowBackIcon />}
               onClick={() => setSelectedChat("")}
@@ -201,10 +203,9 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             flexDir="column"
             justifyContent="flex-end"
             p={3}
-            bg="#E8E8E8"
+            bg="#1d1e24"
             w="100%"
-            h="100%"
-            borderRadius="lg"
+            h="87%"
             overflowY="hidden"
           >
             {loading ? (
@@ -240,19 +241,22 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                 <></>
               )}
               <Input
-                variant="filled"
-                bg="#E0E0E0"
+                bg="#16171b"
+                border="none"
                 placeholder="Enter a message.."
                 value={newMessage}
                 onChange={typingHandler}
+                color="white"
+                padding="0.7em 1.5em"
+                variant="unstyled"
               />
             </FormControl>
           </Box>
         </>
       ) : (
         // to get socket.io on same page
-        <Box display="flex" alignItems=" center" justifyContent="center" h="100 % ">
-          <Text fontSize="3xl" pb={3} fontFamily="Work sans" >
+        <Box display="flex" alignItems=" center" justifyContent="center" h="100%">
+          <Text color="#838383" fontSize="3xl" pb={3} fontFamily="Work sans" >
             Click on a user to start chatting
           </Text>
         </Box>
