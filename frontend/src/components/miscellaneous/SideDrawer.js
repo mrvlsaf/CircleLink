@@ -34,7 +34,7 @@ import { ChatState } from "../../Context/ChatProvider";
 import '../styles.css';
 
 function SideDrawer() {
-  const [search, setSearch] = useState("");
+  const [searchVal, setSearchVal] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loadingChat, setLoadingChat] = useState(false);
@@ -57,17 +57,18 @@ function SideDrawer() {
     navigate("/");
   };
 
-  const handleSearch = async () => {
-    if (!search) {
-      toast({
-        title: "Please Enter something in search",
-        status: "warning",
-        duration: 5000,
-        isClosable: true,
-        position: "top-left",
-      });
-      return;
-    }
+  const handleSearch = async (search) => {
+    setSearchVal(search)
+    // if (!search) {
+    //   toast({
+    //     title: "Please Enter something in search",
+    //     status: "warning",
+    //     duration: 5000,
+    //     isClosable: true,
+    //     position: "top-left",
+    //   });
+    //   return;
+    // }
 
     try {
       setLoading(true);
@@ -95,8 +96,6 @@ function SideDrawer() {
   };
 
   const accessChat = async (userId) => {
-    console.log(userId);
-
     try {
       setLoadingChat(true);
       const config = {
@@ -155,10 +154,11 @@ function SideDrawer() {
               />
               <BellIcon fontSize="2xl" m={1} />
             </MenuButton>
-            <MenuList pl={2}>
+            <MenuList style={{ background: "#16171B", border: "none", textAlign: notification.length ? "default" : "center" }} pl={2}>
               {!notification.length && "No New Messages"}
               {notification.map((notif) => (
                 <MenuItem
+                  style={{ background: "#20232B" }}
                   key={notif._id}
                   onClick={() => {
                     setSelectedChat(notif.chat);
@@ -200,13 +200,13 @@ function SideDrawer() {
               <Input
                 placeholder="Search by name or email"
                 mr={2}
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
+                value={searchVal}
+                onChange={(e) => handleSearch(e.target.value)}
                 borderWidth={1}
                 padding="0.5em 1em"
                 variant="unstyled"
               />
-              <Button onClick={handleSearch}>Go</Button>
+              {/* <Button onClick={handleSearch}>Go</Button> */}
             </Box>
             {loading ? (
               <ChatLoading />
@@ -222,7 +222,7 @@ function SideDrawer() {
             {loadingChat && <Spinner ml="auto" display="flex" />}
           </DrawerBody>
         </DrawerContent>
-      </Drawer >
+      </Drawer>
     </>
   );
 }
