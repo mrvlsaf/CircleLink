@@ -74,9 +74,11 @@ const Login = () => {
       <FormControl id="email" isRequired>
         <FormLabel>Email Address</FormLabel>
         <Input
+          border="none"
           value={email}
           type="email"
           placeholder="Enter Your Email Address"
+          boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
           onChange={(e) => setEmail(e.target.value)}
         />
       </FormControl>
@@ -84,6 +86,8 @@ const Login = () => {
         <FormLabel>Password</FormLabel>
         <InputGroup size="md">
           <Input
+            border="none"
+            boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type={show ? "text" : "password"}

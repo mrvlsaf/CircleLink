@@ -28,17 +28,28 @@ function Homepage() {
         display="flex"
         justifyContent="center"
         p={3}
-        bg="white"
+        border="none"
+        bg="#1d1e24"
+        color="#eff0f0"
         w="100%"
         m="40px 0 15px 0"
         borderRadius="lg"
         borderWidth="1px"
+        boxShadow="rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px"
       >
         <Text fontSize="4xl" fontFamily="Work sans">
           CircleLink
         </Text>
       </Box>
-      <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
+      <Box
+        border="none"
+        bg="#1d1e24"
+        color="#eff0f0"
+        w="100%" p={4}
+        borderRadius="lg"
+        borderWidth="1px"
+        boxShadow="rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px"
+      >
         <Tabs isFitted variant="soft-rounded">
           <TabList mb="1em">
             <Tab>Login</Tab>
@@ -54,7 +65,7 @@ function Homepage() {
           </TabPanels>
         </Tabs>
       </Box>
-    </Container>
+    </Container >
   );
 }
 

@@ -134,6 +134,8 @@ const Signup = () => {
       <FormControl id="first-name" isRequired>
         <FormLabel>Name</FormLabel>
         <Input
+          border="none"
+          boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
           placeholder="Enter Your Name"
           onChange={(e) => setName(e.target.value)}
         />
@@ -141,7 +143,9 @@ const Signup = () => {
       <FormControl id="email" isRequired>
         <FormLabel>Email Address</FormLabel>
         <Input
+          border="none"
           type="email"
+          boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
           placeholder="Enter Your Email Address"
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -150,7 +154,9 @@ const Signup = () => {
         <FormLabel>Password</FormLabel>
         <InputGroup size="md">
           <Input
+            border="none"
             type={show ? "text" : "password"}
+            boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
             placeholder="Enter Password"
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -165,7 +171,9 @@ const Signup = () => {
         <FormLabel>Confirm Password</FormLabel>
         <InputGroup size="md">
           <Input
+            border="none"
             type={show ? "text" : "password"}
+            boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
             placeholder="Confirm password"
             onChange={(e) => setConfirmpassword(e.target.value)}
           />
@@ -179,7 +187,9 @@ const Signup = () => {
       <FormControl id="pic">
         <FormLabel>Upload your Picture</FormLabel>
         <Input
+          border="none"
           type="file"
+          boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
           p={1.5}
           accept="image/*"
           onChange={(e) => postDetails(e.target.files[0])}
