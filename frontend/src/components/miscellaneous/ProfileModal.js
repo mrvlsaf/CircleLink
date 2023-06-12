@@ -28,7 +28,7 @@ const ProfileModal = ({ user, children }) => {
         <ModalOverlay />
         <ModalContent color="#e8e8e8" bg="#20232b" h="410px">
           <ModalHeader
-            fontSize="40px"
+            fontSize="30px"
             fontFamily="Work sans"
             display="flex"
             justifyContent="center"
@@ -49,7 +49,7 @@ const ProfileModal = ({ user, children }) => {
               alt={user.name}
             />
             <Text
-              fontSize={{ base: "28px", md: "30px" }}
+              fontSize={{ base: "20px", md: "22px" }}
               fontFamily="Work sans"
             >
               Email: {user.email}
@@ -58,8 +58,8 @@ const ProfileModal = ({ user, children }) => {
           <ModalFooter>
             <Button onClick={onClose}>Close</Button>
           </ModalFooter>
-        </ModalContent >
-      </Modal >
+        </ModalContent>
+      </Modal>
     </>
   );
 };

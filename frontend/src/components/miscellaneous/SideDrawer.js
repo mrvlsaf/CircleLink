@@ -173,7 +173,7 @@ function SideDrawer() {
             </MenuList>
           </Menu>
           <Menu>
-            <MenuButton as={Button} bg="white" rightIcon={<ChevronDownIcon />}>
+            <MenuButton as={Button} bg="#eff0f0" rightIcon={<ChevronDownIcon />}>
               <Avatar
                 size="sm"
                 cursor="pointer"
