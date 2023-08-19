@@ -13,9 +13,17 @@ import {
   Text,
   Image,
 } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ProfileModal = ({ user, children }) => {
+  const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const logoutHandler = () => {
+    localStorage.removeItem("userInfo");
+    navigate("/");
+  };
 
   return (
     <>
@@ -55,7 +63,11 @@ const ProfileModal = ({ user, children }) => {
               Email: {user.email}
             </Text>
           </ModalBody>
-          <ModalFooter>
+          <ModalFooter
+            display="flex"
+            justifyContent="space-between"
+          >
+            {user._id === JSON.parse(localStorage.getItem("userInfo"))._id ? <Button bg="red" color="#edf2f7" colorScheme="red" onClick={logoutHandler}>Logout</Button> : null}
             <Button onClick={onClose}>Close</Button>
           </ModalFooter>
         </ModalContent>
