@@ -18,6 +18,7 @@ import { useState } from "react";
 import { ChatState } from "../../Context/ChatProvider";
 import UserBadgeItem from "../userAvatar/UserBadgeItem";
 import UserListItem from "../userAvatar/UserListItem";
+import { ScreenType } from "../../helper/ScreenType";
 
 const GroupChatModal = ({ children }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -27,6 +28,7 @@ const GroupChatModal = ({ children }) => {
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
   const toast = useToast();
+  const isMobile = ScreenType();
 
   const { user, chats, setChats } = ChatState();
 
@@ -132,7 +134,7 @@ const GroupChatModal = ({ children }) => {
         <ModalOverlay />
         <ModalContent color="#e8e8e8" bg="#20232b">
           <ModalHeader
-            fontSize="35px"
+            fontSize={isMobile ? "30px" : "35px"}
             fontFamily="Work sans"
             display="flex"
             justifyContent="center"
@@ -191,7 +193,7 @@ const GroupChatModal = ({ children }) => {
             </Button>
           </ModalFooter>
         </ModalContent>
-      </Modal>
+      </Modal >
     </>
   );
 };
