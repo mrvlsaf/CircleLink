@@ -12,9 +12,9 @@ const Chatpage = () => {
   const isMobile = ScreenType();
 
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ display: "flex", flexDirection: "column", width: "100vw", height: "100vh" }}>
       {user && <SideDrawer />}
-      <Box display="flex" justifyContent=" space-between" w="100%" h="91.5vh" p={3}>
+      <Box display="flex" justifyContent=" space-between" w="100%" h="87%" p={3}>
         {user ? (
           isMobile ? (
             !selectedChat ? <MyChats fetchAgain={fetchAgain} /> : null

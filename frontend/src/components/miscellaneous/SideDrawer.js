@@ -32,12 +32,14 @@ import { getSender } from "../../config/ChatLogics";
 import UserListItem from "../userAvatar/UserListItem";
 import { ChatState } from "../../Context/ChatProvider";
 import '../styles.css';
+import { ScreenType } from "../../helper/ScreenType";
 
 function SideDrawer() {
   const [searchVal, setSearchVal] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loadingChat, setLoadingChat] = useState(false);
+  const isMobile = ScreenType();
 
   const {
     setSelectedChat,
@@ -123,13 +125,14 @@ function SideDrawer() {
   };
 
   return (
-    <>
+    <div style={{ height: "13%" }}>
       <Box
         display="flex"
         justifyContent="space-between"
         alignItems="center"
         bg="#20232b"
         w="100%"
+        h="100%"
         p="10px 15px"
         color="#eff0f0"
         borderBottom="5px solid black"
@@ -137,9 +140,9 @@ function SideDrawer() {
         <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
           <Button className="search-button" colorScheme="#eff0f0" onClick={onOpen}>
             <i className="fas fa-search"></i>
-            <Text d={{ base: "none", md: "flex" }} px={4}>
+            {!isMobile && <Text d={{ base: "none", md: "flex" }} px={4}>
               Search User
-            </Text>
+            </Text>}
           </Button>
         </Tooltip>
         <Text fontSize="2xl" fontFamily="Work sans">
@@ -223,7 +226,7 @@ function SideDrawer() {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
-    </>
+    </div>
   );
 }
 

@@ -65,7 +65,7 @@ function Homepage() {
           </TabPanels>
         </Tabs>
       </Box>
-    </Container >
+    </Container>
   );
 }
 

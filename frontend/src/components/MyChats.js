@@ -8,9 +8,11 @@ import ChatLoading from "./ChatLoading";
 import GroupChatModal from "./miscellaneous/GroupChatModal";
 import { Button } from "@chakra-ui/react";
 import { ChatState } from "../Context/ChatProvider";
+import { ScreenType } from "../helper/ScreenType";
 
 const MyChats = ({ fetchAgain }) => {
   const [loggedUser, setLoggedUser] = useState();
+  const isMobile = ScreenType();
 
   const { selectedChat, setSelectedChat, user, chats, setChats } = ChatState();
 
@@ -49,7 +51,7 @@ const MyChats = ({ fetchAgain }) => {
       d={{ base: selectedChat ? "none" : "flex", md: "flex" }}
       flexDir="column"
       alignItems="center"
-      p={3}
+      p={!isMobile && 3}
       color="#838383"
       w={{ base: "100%", md: "31%" }}
       h="100%"
@@ -57,7 +59,7 @@ const MyChats = ({ fetchAgain }) => {
     >
       <Box
         pb={3}
-        px={3}
+        px={!isMobile && 3}
         fontSize={{ base: "28px", md: "30px" }}
         fontFamily="Work sans"
         display="flex"
@@ -72,14 +74,15 @@ const MyChats = ({ fetchAgain }) => {
             fontSize={{ base: "17px", md: "10px", lg: "17px" }}
             rightIcon={<AddIcon />}
           >
-            New Group Chat
+            New Group
           </Button>
         </GroupChatModal>
       </Box>
       <Box
         display="flex"
         flexDir="column"
-        p={3}
+        py={3}
+        px={!isMobile && 3}
         bg="#20232b"
         w="100%"
         h="90%"
