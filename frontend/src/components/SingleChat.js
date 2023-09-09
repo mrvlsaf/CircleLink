@@ -11,12 +11,13 @@ import ProfileModal from "./miscellaneous/ProfileModal";
 import ScrollableChat from "./ScrollableChat";
 import Lottie from "react-lottie";
 import animationData from "../animations/typing.json";
+import { ScreenType } from "../helper/ScreenType";
 
 import io from "socket.io-client";
 import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 import { ChatState } from "../Context/ChatProvider";
-// const ENDPOINT = "http://localhost:5000";
-const ENDPOINT = "https://circle-link.onrender.com/";
+const ENDPOINT = "http://localhost:5000";
+// const ENDPOINT = "https://circle-link.onrender.com/";
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
@@ -27,6 +28,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   const [typing, setTyping] = useState(false);
   const [istyping, setIsTyping] = useState(false);
   const toast = useToast();
+  const isMobile = ScreenType();
 
   const defaultOptions = {
     loop: true,
